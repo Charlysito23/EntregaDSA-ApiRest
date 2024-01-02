@@ -5,6 +5,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import java.lang.Math.cos
+import java.lang.Math.sin
+import java.lang.Math.tan
 
 class MainActivity : ComponentActivity() {
     //0-nada,1-suma,2-resta,3-multiplicación,4-división
@@ -27,16 +30,33 @@ class MainActivity : ComponentActivity() {
         btnIgual.setOnClickListener{
             var numero2:Double = textView2.text.toString().toDouble()
             var resp:Double=0.0
-            when (oper){
-                1-> resp=numero1+numero2
-                2-> resp=numero1-numero2
-                3-> resp=numero1*numero2
-                4-> resp=numero1/numero2
+            when (oper) {
+                1 -> resp = numero1 + numero2
+                2 -> resp = numero1 - numero2
+                3 -> resp = numero1 * numero2
+                4 -> resp = numero1 / numero2
+                5 -> resp = sin(numero1)
+                6 -> resp = cos(numero1)
+                7 -> resp = tan(numero1)
             }
             textView2.setText(resp.toString())
             textView.setText("")
         }
+        btnBorrar.setOnClickListener{
+            textView.setText("")
+            textView2.setText("")
+            numero1=0.0
+            oper=0
+        }
 
+    }
+
+    fun sinc(x: Double): Double {
+        return if (x != 0.0) {
+            sin(x) / x
+        } else {
+            1.0 // Valor límite de sinc(x) cuando x tiende a 0
+        }
     }
 
     fun presionarDigito(view: View) {
@@ -59,9 +79,9 @@ class MainActivity : ComponentActivity() {
             R.id.btnmultiplicar -> textView2.setText(num2+"*")
             R.id.btndividir -> textView2.setText(num2+"/")
             R.id.btnigual -> textView2.setText(num2)
-           // R.id.btnsin -> textView.setText(num)
-          //  R.id.btncos -> textView.setText(num)
-          //  R.id.btntan -> textView.setText(num)
+            R.id.btnsin -> textView.setText(num2)
+            R.id.btncos -> textView.setText(num2)
+            R.id.btntan -> textView.setText(num2)
         }
     }
     fun clickOperacion(view:View){
@@ -83,6 +103,18 @@ class MainActivity : ComponentActivity() {
             R.id.btndividir->{
                 textView.setText(num2 + "/")
                 oper = 4
+            }
+            R.id.btnsin->{
+                textView.setText(num2 + "sin")
+                oper = 5
+            }
+            R.id.btncos->{
+                textView.setText(num2 + "cos")
+                oper = 6
+            }
+            R.id.btntan->{
+                textView.setText(num2 + "tan")
+                oper = 7
             }
         }
     }

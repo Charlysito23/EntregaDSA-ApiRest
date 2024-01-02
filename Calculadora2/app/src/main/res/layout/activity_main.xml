@@ -5,16 +5,16 @@
     android:id="@+id/tv_num1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CE"
+        app:layout_constraintBottom_toTopOf="@+id/btn8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="115dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn7"
@@ -68,7 +68,8 @@
         android:onClick="presionarDigito"
         android:text="4"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn5"
-        tools:layout_editor_absoluteX="8dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn5"
@@ -192,5 +193,52 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnigual"
         app:layout_constraintTop_toBottomOf="@+id/btnmultiplicar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="405dp"
+        android:layout_height="41dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="401dp"
+        android:layout_height="47dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/btnBorrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnsin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickOperacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn0"
+        tools:text="sin" />
+
+    <Button
+        android:id="@+id/btncos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickOperacion"
+        android:text="cos"
+        app:layout_constraintStart_toEndOf="@+id/btnsin"
+        app:layout_constraintTop_toBottomOf="@+id/btnPunto" />
+
+    <Button
+        android:id="@+id/btntan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickOperacion"
+        android:text="tan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btncos"
+        app:layout_constraintTop_toBottomOf="@+id/btnigual" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
