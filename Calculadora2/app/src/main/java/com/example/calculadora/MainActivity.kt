@@ -79,14 +79,15 @@ class MainActivity : ComponentActivity() {
             R.id.btnmultiplicar -> textView2.setText(num2+"*")
             R.id.btndividir -> textView2.setText(num2+"/")
             R.id.btnigual -> textView2.setText(num2)
-            R.id.btnsin -> textView.setText(num2)
-            R.id.btncos -> textView.setText(num2)
-            R.id.btntan -> textView.setText(num2)
+            R.id.btnsin -> textView2.setText(num2)
+            R.id.btncos -> textView2.setText(num2)
+            R.id.btntan -> textView2.setText(num2)
         }
     }
     fun clickOperacion(view:View){
         numero1 = textView2.text.toString().toDouble()
         var num2:String=textView2.text.toString()
+        textView2.setText("")
         when(view.id){
             R.id.btn_suma->{
                 textView.setText(num2 + "+")

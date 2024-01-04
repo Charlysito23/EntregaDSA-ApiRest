@@ -165,6 +165,7 @@
         android:id="@+id/btnPunto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="."
         app:layout_constraintBaseline_toBaselineOf="@+id/btnigual"
         app:layout_constraintEnd_toStartOf="@+id/btnigual"
@@ -175,7 +176,7 @@
         android:id="@+id/btnigual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="presionarOperacion"
+        android:onClick="clickOperacion"
         android:text="="
         app:layout_constraintBaseline_toBaselineOf="@+id/btndividir"
         app:layout_constraintEnd_toStartOf="@+id/btndividir"
@@ -198,17 +199,15 @@
         android:id="@+id/textView"
         android:layout_width="405dp"
         android:layout_height="41dp"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="401dp"
         android:layout_height="47dp"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btnBorrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
