@@ -1,64 +1,64 @@
 package models;
+
 /**
- * Represents a music track with an ID, title, and singer.
+ * Representa una pista de música con un ID, título y cantante.
  */
 public class Track {
-    // Private fields to encapsulate the internal state of the Track
+    // Campos privados para encapsular el estado interno de la pista
     private String id;
     private String title;
     private String singer;
 
-    // Default constructor
+    // Constructor por defecto
     public Track() {}
 
     /**
-     * Parameterized constructor to create a Track with specified details.
+     * Constructor parametrizado para crear una pista con detalles específicos.
      *
-     * @param id     The unique identifier of the track.
-     * @param title  The title of the track.
-     * @param singer The singer or artist of the track.
-     **/
-
+     * @param id     El identificador único de la pista.
+     * @param title  El título de la pista.
+     * @param singer El cantante o artista de la pista.
+     */
     public Track(String id, String title, String singer) {
         this.id = id;
         this.title = title;
         this.singer = singer;
     }
 
-    // Getter for the track ID
+    // Getter para el ID de la pista
     public String getId() {
         return id;
     }
 
-    // Setter for the track ID
+    // Setter para el ID de la pista
     public void setId(String id) {
         this.id = id;
     }
 
-    // Getter for the track title
+    // Getter para el título de la pista
     public String getTitle() {
         return title;
     }
 
-    // Setter for the track title
+    // Setter para el título de la pista
     public void setTitle(String title) {
         this.title = title;
     }
 
-    // Getter for the track singer
+    // Getter para el cantante de la pista
     public String getSinger() {
         return singer;
     }
 
-    // Setter for the track singer
+    // Setter para el cantante de la pista
     public void setSinger(String singer) {
         this.singer = singer;
     }
 
     /**
-     * Overrides the default toString method to provide a formatted string representation of the Track.
+     * Sobrescribe el método toString predeterminado para proporcionar una representación de cadena formateada de la pista.
      *
-     * @return A string containing the ID, title, and singer of the track.
+     * @return Una cadena que contiene el ID, título y cantante de la pista.
      */
     @Override
     public String toString() {

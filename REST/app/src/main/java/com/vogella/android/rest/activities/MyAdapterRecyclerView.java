@@ -3,7 +3,6 @@ package com.vogella.android.rest.activities;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,27 +14,23 @@ import java.util.List;
 
 import models.Track;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class MyAdapterRecyclerView extends RecyclerView.Adapter<MyAdapterRecyclerView.ViewHolder> {
     List<Track> tracks;
     private static RecyclerViewClickListener itemListener;
 
-    public RecyclerViewAdapter(List<Track> tracks, RecyclerViewClickListener itemListener) {
+    public MyAdapterRecyclerView(List<Track> tracks, RecyclerViewClickListener itemListener) {
         this.tracks = tracks;
-        RecyclerViewAdapter.itemListener = itemListener;
+        MyAdapterRecyclerView.itemListener = itemListener;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView id, title, singer;
-        ImageView photoTrack;
-        ImageView deleteImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.idTrack);
             title = itemView.findViewById(R.id.titleTrack);
             singer = itemView.findViewById(R.id.singerTrack);
-            photoTrack = itemView.findViewById(R.id.imgTrack);
-            deleteImage = itemView.findViewById(R.id.delete);
             itemView.setOnClickListener(this);
         }
 
@@ -59,8 +54,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.id.setText(currentTrack.getId());
         holder.title.setText(currentTrack.getTitle());
         holder.singer.setText(currentTrack.getSinger());
-        holder.photoTrack.setImageResource(R.drawable.track);
-        holder.deleteImage.setTag(currentTrack.getId());
     }
 
     @Override

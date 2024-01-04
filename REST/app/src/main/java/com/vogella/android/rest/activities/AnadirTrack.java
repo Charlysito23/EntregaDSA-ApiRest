@@ -2,21 +2,19 @@ package com.vogella.android.rest.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.api.Api;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vogella.android.rest.R;
 
-import models.Track;
-
 public class AnadirTrack extends AppCompatActivity {
     private Api apiService;
-    private TextInputEditText idText;
-    private TextInputEditText titleText;
-    private TextInputEditText singerText;
+    private TextInputEditText idtext;
+    private TextInputEditText titulo;
+    private TextInputEditText cantante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +23,15 @@ public class AnadirTrack extends AppCompatActivity {
 
         apiService = RetrofitClient.getInstance().getMyApi();
 
-        idText = findViewById(R.id.idAdd);
-        titleText = findViewById(R.id.titleAdd);
-        singerText = findViewById(R.id.singerAdd);
+        idtext = findViewById(R.id.idAdd);
+        titulo = findViewById(R.id.titleAdd);
+        cantante = findViewById(R.id.singerAdd);
     }
 
     public void addTrack(View view) {
-        String id = idText.getText().toString();
-        String title = titleText.getText().toString();
-        String singer = singerText.getText().toString();
+        String id = idtext.getText().toString();
+        String title = titulo.getText().toString();
+        String singer = cantante.getText().toString();
 
 
     }
