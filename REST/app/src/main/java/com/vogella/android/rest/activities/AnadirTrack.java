@@ -35,29 +35,11 @@ public class AnadirTrack extends AppCompatActivity {
         String title = titleText.getText().toString();
         String singer = singerText.getText().toString();
 
-        if (!id.isEmpty() && !title.isEmpty() && !singer.isEmpty()) {
-            Call<Track> call = apiService.createTrack(new Track(id, title, singer));
-            call.enqueue(new Callback<Track>() {
-                @Override
-                public void onResponse(Call<Track> call, Response<Track> response) {
-                    // Handle the response if needed
-                }
 
-                @Override
-                public void onFailure(Call<Track> call, Throwable t) {
-                    // Handle failure if needed
-                }
-            });
-
-            Intent intentTracks = new Intent(AñadirTrackActivity.this, TrackListActivity.class);
-            startActivity(intentTracks);
-        } else {
-            Toast.makeText(AñadirTrackActivity.this, "Missing fields", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void returnTracks(View view) {
-        Intent intentTracks = new Intent(AñadirTrackActivity.this, TrackListActivity.class);
+        Intent intentTracks = new Intent(AnadirTrack.this, ListaTracks.class);
         startActivity(intentTracks);
     }
 }

@@ -48,7 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.track_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout_track, parent, false);
         return new ViewHolder(view);
     }
 
